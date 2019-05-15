@@ -34,7 +34,7 @@ app.get('/planejamento/dashboard', function(req, res) {
 
 
 app.get('/', function(req, res) {
-    res.send('Hello Psycap!');
+  res.sendFile('index.html');
 });
 
 app.get('/insert', function(req, res) {
