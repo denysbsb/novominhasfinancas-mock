@@ -7,7 +7,8 @@ const pg = require('pg');
 
 const { Pool } = require('pg');
 var path = require('path');
-app.use(express.static('public'))
+
+app.use('/uploads', express.static(__dirname + '/public'));
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL
