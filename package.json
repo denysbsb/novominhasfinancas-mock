@@ -1,0 +1,27 @@
+{
+  "name": "nodeheroku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denysbsb/nodeheroku.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denysbsb/nodeheroku/issues"
+  },
+  "homepage": "https://github.com/denysbsb/nodeheroku#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "pg": "^7.4.1",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
+  }
+}
