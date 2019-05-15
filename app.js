@@ -24,11 +24,11 @@ app.get('/planejamento/dashboard', function(req, res) {
 
   res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify({
-      valorPlanejamento: 5825.00,
-      recebRealizado: 2119.54,
-      recebOrcado: 5000.00,
-      gastoRealizado: 1004.00,
-      gastoOrcado: 3420.00
+      planningValue: 5825.00,
+      vlGain: 5825.00,
+      budgetedGain: 2119.54,
+      vlSpent: 5000.00,
+      budgetedSpent: 1004.00,
     }));
 });
 
