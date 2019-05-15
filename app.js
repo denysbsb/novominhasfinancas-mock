@@ -6,6 +6,7 @@ var rp = require('request-promise');
 const pg = require('pg');
 
 const { Pool } = require('pg');
+var path = require('path');
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL
@@ -34,7 +35,7 @@ app.get('/planejamento/dashboard', function(req, res) {
 
 
 app.get('/', function(req, res) {
-  res.sendFile('index.html');
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get('/insert', function(req, res) {
