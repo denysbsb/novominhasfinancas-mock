@@ -20,16 +20,22 @@ pool.on('connect', () => {
 
 // Minhas finanças
 
-app.get('/planejamento/dashboard', function(req, res) {
+app.get('/planejamento/dashboard/:data', function(req, res) {
 
+  if(req.params.data == "2019-05"){
   res.setHeader('Content-Type', 'application/json');
   res.end(JSON.stringify({
       planningValue: 5825.00,
       vlGain: 5825.00,
       budgetedGain: 2119.54,
       vlSpent: 5000.00,
-      budgetedSpent: 1004.00,
+      budgetedSpent: 1004.00
     }));
+  } else{
+    res.status(404).send(JSON.stringify({
+      msg: "sem dados"
+    }));
+  }
 });
 
 
