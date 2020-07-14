@@ -44,7 +44,7 @@ app.get('/brasileirao/:data', function(req, res) {
   if(req.params.data == "2020-07"){
   res.setHeader('Content-Type', 'application/json');
 
-  res.end(JSON.stringify({
+  res.end(JSON.stringify([{
       time1: "Corinthians",
       time2: "Vasco",
       placar: "2x0",
@@ -64,7 +64,14 @@ app.get('/brasileirao/:data', function(req, res) {
       placar: "1x3",
       data_horario: "10/07/2020 - 15:00",
       local: "Alianz - SP"
-    }));
+    },
+    {
+      time1: "Sport",
+      time2: "Vila Nova",
+      placar: "0x3",
+      data_horario: "10/07/2020 - 15:00",
+      local: "Ressaca - RE"
+    }]));
   } else{
     res.status(404).send(JSON.stringify({
       msg: "sem dados"
