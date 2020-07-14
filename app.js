@@ -57,6 +57,13 @@ app.get('/brasileirao/2020', function(req, res) {
       placar: "4x0",
       data_horario: "10/07/2020 - 15:00",
       local: "Maracanã - RJ"
+    },
+    {
+      time1: "Palmeiras",
+      time2: "Santos",
+      placar: "1x3",
+      data_horario: "10/07/2020 - 15:00",
+      local: "Alianz - SP"
     }));
   } else{
     res.status(404).send(JSON.stringify({
