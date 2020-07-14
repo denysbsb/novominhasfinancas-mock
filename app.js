@@ -39,9 +39,9 @@ app.get('/planejamento/dashboard/:data', function(req, res) {
 });
 
 
-app.get('/brasileirao/2020', function(req, res) {
+app.get('/brasileirao/:data', function(req, res) {
 
-  if(req.params.data == "2019-05"){
+  if(req.params.data == "2020-07"){
   res.setHeader('Content-Type', 'application/json');
 
   res.end(JSON.stringify({
