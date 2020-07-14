@@ -39,6 +39,31 @@ app.get('/planejamento/dashboard/:data', function(req, res) {
 });
 
 
+app.get('/brasileirao/2020', function(req, res) {
+
+  if(req.params.data == "2019-05"){
+  res.setHeader('Content-Type', 'application/json');
+
+  res.end(JSON.stringify({
+      time1: "Corinthians",
+      time2: "Vasco",
+      placar: "2x0",
+      data_horario: "10/07/2020 - 16:00",
+      local: "Pacaembu - SP"
+    },
+    {
+      time1: "Flamengo",
+      time2: "Fluminense",
+      placar: "4x0",
+      data_horario: "10/07/2020 - 15:00",
+      local: "Maracanã - RJ"
+    }));
+  } else{
+    res.status(404).send(JSON.stringify({
+      msg: "sem dados"
+    }));
+  }
+});
 
 
 
