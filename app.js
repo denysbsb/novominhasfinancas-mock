@@ -44,7 +44,9 @@ app.get('/brasileirao/:data', function(req, res) {
   if(req.params.data == "2020-07"){
   res.setHeader('Content-Type', 'application/json');
 
-  res.end(JSON.stringify([{
+  res.end(JSON.stringify(
+     [{
+      id:1,
       time1: "Corinthians",
       time2: "Vasco",
       placar: "2x0",
@@ -52,6 +54,7 @@ app.get('/brasileirao/:data', function(req, res) {
       local: "Pacaembu - SP"
     },
     {
+      id:2,
       time1: "Flamengo",
       time2: "Fluminense",
       placar: "4x0",
@@ -59,6 +62,7 @@ app.get('/brasileirao/:data', function(req, res) {
       local: "Maracanã - RJ"
     },
     {
+      id:3,
       time1: "Palmeiras",
       time2: "Santos",
       placar: "1x3",
@@ -66,6 +70,7 @@ app.get('/brasileirao/:data', function(req, res) {
       local: "Alianz - SP"
     },
     {
+      id:4,
       time1: "Sport",
       time2: "Vila Nova",
       placar: "0x3",
@@ -79,6 +84,81 @@ app.get('/brasileirao/:data', function(req, res) {
   }
 });
 
+app.get('/linha-do-tempo/:id', function(req, res) {
+
+  if(req.params.id == "1"){
+    res.setHeader('Content-Type', 'application/json');  
+
+  res.end(JSON.stringify(
+     [{
+      tempo: "01:52",
+      descricao: "Escanteio na trave!"
+    },
+    {
+      tempo: "12:12",
+      descricao: "Penalti!"
+    },
+    {
+      tempo: "12:15",
+      descricao: "Gooool no angulo!"
+    }]));
+  }
+  else if (req.params.id == "2") {
+    res.setHeader('Content-Type', 'application/json');  
+
+    res.end(JSON.stringify(
+       [{
+        tempo: "08:03",
+        descricao: "Cartao amarelo"
+      },
+      {
+        tempo: "09:12",
+        descricao: "Briga em campo"
+      },
+      {
+        tempo: "84:15",
+        descricao: "GoOoooool no maravilhoso!"
+      }]));
+  }
+  else if (req.params.id == "3") {
+    res.setHeader('Content-Type', 'application/json');  
+
+    res.end(JSON.stringify(
+       [{
+        tempo: "07:03",
+        descricao: "Escanteio na trave!"
+      },
+      {
+        tempo: "14:17",
+        descricao: "jogador machucado!"
+      },
+      {
+        tempo: "46:15",
+        descricao: "Gooool de bicicleta!"
+      }]));
+  }
+  else if (req.params.id == "4") {
+    res.setHeader('Content-Type', 'application/json');  
+
+    res.end(JSON.stringify(
+       [{
+        tempo: "11:10",
+        descricao: "Cartão amarelo para Ramirez"
+      },
+      {
+        tempo: "42:10",
+        descricao: "Na trave!"
+      },
+      {
+        tempo: "70:15",
+        descricao: "Substituição!"
+      }]));
+  } else{
+    res.status(404).send(JSON.stringify({
+      msg: "sem dados"
+    }));
+  }
+});
 
 
 app.get('/', function(req, res) {
