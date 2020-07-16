@@ -72,7 +72,7 @@ app.get('/brasileirao/:data', function(req, res) {
     {
       id:4,
       time1: "Sport",
-      time2: "Vila Nova",
+      time2: "Gremio",
       placar: "0x3",
       data_horario: "10/07/2020 - 15:00",
       local: "Ressaca - RE"
